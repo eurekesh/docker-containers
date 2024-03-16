@@ -21,6 +21,8 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /usr/include
 RUN ln -sf eigen3/Eigen Eigen
 
+ENV CC=clang CXX=clang++
+
 # Install pmp-library
 WORKDIR ${HOME}
 RUN git clone https://github.com/pmp-library/pmp-library.git /workspaces/part_thickness/pmp-library
