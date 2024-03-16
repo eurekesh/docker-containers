@@ -26,4 +26,4 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/pmp-eigen-jb-threaded:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/pmp-eigen-jb-threaded:latest
