@@ -1,4 +1,4 @@
-FROM ubuntu:jammy
+FROM debian
 
 ARG DEBIAN_FRONTEND=noninteractive
 
@@ -16,7 +16,8 @@ RUN apt-get update && apt-get install -y \
     wget \
     clang llvm ninja-build \
     libboost-all-dev clang-tidy \
-    linux-tools-generic
+    linux-tools-generic \
+    libwayland-dev
 
 WORKDIR /usr/include
 RUN ln -sf eigen3/Eigen Eigen
