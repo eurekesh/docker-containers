@@ -1,4 +1,4 @@
-FROM debian
+FROM ubuntu:latest
 
 ARG DEBIAN_FRONTEND=noninteractive
 
@@ -15,9 +15,7 @@ RUN apt-get update && apt-get install -y \
     openssh-server \
     wget \
     clang llvm ninja-build \
-    libboost-all-dev clang-tidy \
-    linux-tools-generic \
-    libwayland-dev
+    libboost-all-dev clang-tidy
 
 WORKDIR /usr/include
 RUN ln -sf eigen3/Eigen Eigen
