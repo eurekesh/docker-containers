@@ -28,7 +28,7 @@ WORKDIR ${HOME}
 RUN git clone https://github.com/pmp-library/pmp-library.git /workspaces/part_thickness/pmp-library
 WORKDIR /workspaces/part_thickness/pmp-library
 RUN cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=/usr/bin/clang++ -DCMAKE_CXX_FLAGS=-stdlib=libstdc++ -DPMP_STRICT_COMPILATION=OFF  \
-    -DBUILD_SHARED_LIBS=OFF . --parallel
+    -DBUILD_SHARED_LIBS=OFF .
 RUN make
 RUN make install
 RUN cd tests && ctest --output-on-failure
